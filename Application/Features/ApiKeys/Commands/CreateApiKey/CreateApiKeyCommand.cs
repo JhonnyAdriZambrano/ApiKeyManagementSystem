@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MediatR;
 
 namespace Application.Features.ApiKeys.Commands.CreateApiKey
 {
-    internal class CreateApiKeyCommand
+    public record CreateApiKeyCommand : IRequest<CreateApiKeyResponse>
     {
+        public required int UserId {  get; init; } 
+        public required string Name { get; init; }
+        public  DateTime? ExpiresAt { get; init; }
     }
 }

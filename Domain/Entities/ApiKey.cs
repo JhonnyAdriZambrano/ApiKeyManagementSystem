@@ -73,7 +73,7 @@ namespace Domain.Entities
             if (IsDeleted)
                 throw new InvalidOperationException("La Key ya fue eliminada.");
            
-            Status = ApiKeyStatus.Inactive;
+            Status = ApiKeyStatus.Removed;
             DeletedAt = DateTime.UtcNow;
             UpdatedAt = DateTime.UtcNow;
         }

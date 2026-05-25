@@ -5,6 +5,7 @@
         Inactive = 0,
         Active = 1,
         Revoked = 2,
-        Expired = 3
+        Expired = 3,
+        Removed = 4
     }
 }
