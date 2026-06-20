@@ -1,4 +1,4 @@
-﻿namespace Application.Common.ValueObjects
+﻿namespace Application.Common.ValueObject
 {
     public record GeneratedResult
     {

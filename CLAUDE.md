@@ -9,7 +9,7 @@
 ## Current Context
 - **Phase:** 1 - Backend Core (API Key Mgt)
 - **Stack:** .NET 10, C#, EF Core, MediatR, CQRS, Dapper, SQL Server.
-- **Status:** Application Layer -> `CreateUserCommand` & Handler.
+- **Status:** Infrastructure layer: implement repositories and services..
 
 ## Required Output Format (Strict)
 1. **Critical & Gaps:** (Security/Arch violations. Identify knowledge gaps or incorrect assumptions in the user's approach).

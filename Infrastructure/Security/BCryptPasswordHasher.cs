@@ -5,22 +5,22 @@ namespace Infrastructure.Security
 {
     public class BCryptPasswordHasher : IPasswordHasher
     {
-        public Task<string> HashAsync(string password, CancellationToken cancellationToken)
+        public async Task<string> HashAsync(string password, CancellationToken cancellationToken)
         {
             if(string.IsNullOrWhiteSpace(password))
                 throw new ArgumentException("La contraseña no puede estar vacia.", nameof(password));
 
-            return Task.Run(() => BCrypt.Net.BCrypt.HashPassword(password, SecurityVariable.WorkFactor));
+            return await Task.Run(() => BCrypt.Net.BCrypt.HashPassword(password, SecurityVariable.WorkFactor), cancellationToken);
         }
 
-        public Task<bool> VerifyHashAsync(string password, string hashedPassword, CancellationToken cancellationToken)
+        public async Task<bool> VerifyHashAsync(string password, string hashedPassword, CancellationToken cancellationToken)
         {
             if (string.IsNullOrWhiteSpace(password))
                 throw new ArgumentException("La contraseña no puede estar vacia.", nameof(password));
             if (string.IsNullOrWhiteSpace(hashedPassword))
                 throw new ArgumentException("El hash ingresado no puede ser vacio.", nameof(hashedPassword));
 
-            return Task.Run(() => BCrypt.Net.BCrypt.Verify(password, hashedPassword));
+            return await Task.Run(() =>BCrypt.Net.BCrypt.Verify(password, hashedPassword), cancellationToken);
         }
     }
 }

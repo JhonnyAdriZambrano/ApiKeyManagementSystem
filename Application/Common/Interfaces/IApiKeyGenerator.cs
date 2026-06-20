@@ -1,4 +1,4 @@
-﻿using Application.Common.ValueObjects;
+﻿using Application.Common.ValueObject;
 
 namespace Application.Common.Interfaces
 {

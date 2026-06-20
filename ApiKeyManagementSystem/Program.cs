@@ -1,4 +1,5 @@
 using ApiKeyManagementSystem.Exceptions;
+using Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddProblemDetails();
 builder.Services.AddExceptionHandler<NotFoundExceptionHandler>();
 builder.Services.AddExceptionHandler<DuplicateEmailExceptionHandler>();
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddMediatR(config => { config.RegisterServicesFromAssemblyContaining<ApplicationAssemblyMarker>(); });
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
