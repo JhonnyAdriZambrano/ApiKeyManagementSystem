@@ -9,7 +9,8 @@
 ## Current Context
 - **Phase:** 1 - Backend Core (API Key Mgt)
 - **Stack:** .NET 10, C#, EF Core, MediatR, CQRS, Dapper, SQL Server.
-- **Status:** Infrastructure layer: implement repositories and services..
+- **Status:** Infrastructure layer: DependencyInjection entry point → AppDbContext (Fluent API) → UserRepository →
+  ApiKeyRepository → Migrations.
 
 ## Required Output Format (Strict)
 1. **Critical & Gaps:** (Security/Arch violations. Identify knowledge gaps or incorrect assumptions in the user's approach).
